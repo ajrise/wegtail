@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date }}</p>
+
+    <div class="intro">{{ page.intro }}</div>
+    <a>修改日期:</a>{{ page.ModDate}}
+    <br>
+    <a>正文：</a>{{ page.body|richtext }}
+    <p><a href="{{ page.get_parent.url }}">返回到文稿列表</a></p>
+
+{% endblock %}
